@@ -2,6 +2,8 @@ def startMaze():
     clear()
     plant(Entities.Bush)
     while not is_over(Entities.Hedge) and not is_over(Entities.Treasure):
+        if num_items(Items.Fertilizer) < 10:
+            trade(Items.Fertilizer, 10)
         use_item(Items.Fertilizer)
     solveMaze()
 def is_over( test ):
