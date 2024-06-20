@@ -2,9 +2,13 @@ def startMaze():
     clear()
     plant(Entities.Bush)
     while not is_over(Entities.Hedge) and not is_over(Entities.Treasure):
-        useFertilizer()
+        use_item(Items.Fertilizer)
     solveMaze()
-
+def is_over( test ):
+	if get_entity_type() == test:
+		return True
+	else:
+		return False
 
 def solveMaze():
 
